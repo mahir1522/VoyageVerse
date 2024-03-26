@@ -6,7 +6,7 @@
       <h1 class="mb-4">Log In VoyageVerse</h1>
         <form>
           <div class="mb-3">
-            <input id="userName" name="userName" class="form-control border-0 border-bottom" type="email" placeholder="Username or email">
+            <input id="userName" name="userName" class="form-control border-0 border-bottom" type="email" placeholder="Email">
           </div>
           <div class="mb-3">
             <input id="userPass" name="userPass" class="form-control border-0 border-bottom" type="password" placeholder="Password">
@@ -19,8 +19,16 @@
       <ng-container *ngIf="!showLogin">
         <h1 class="mb-4">Sign Up for VoyageVerse</h1>
         <form>
+          <div class="row">
+            <div class="col mb-3">
+              <input id="firstName" name="firstName" class="form-control border-0 border-bottom" type="text" placeholder="First name">
+            </div>
+            <div class="col mb-3">
+              <input id="lastName" name="lastName" class="form-control border-0 border-bottom" type="text" placeholder="Last name">
+            </div>
+          </div>
           <div class="mb-3">
-            <input id="newUserName" name="newUserName" class="form-control border-0 border-bottom" type="email" placeholder="Username or email">
+            <input id="newUserName" name="newUserName" class="form-control border-0 border-bottom" type="email" placeholder="Email">
           </div>
           <div class="mb-3">
             <input id="newuserPass" name="newuserPass" class="form-control border-0 border-bottom" type="password" placeholder="Password">
