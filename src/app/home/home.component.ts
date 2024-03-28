@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Posts} from "../models/post.model";
+import {Posts} from "../../models/post.model";
 import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -8,17 +9,14 @@ import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
   imports: [
     NgForOf,
     NgOptimizedImage,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent {
 
   posts: Posts[] = [];
-
-  ngOnInit() {
-    this.posts = Posts.getPosts()
-  }
 
 }

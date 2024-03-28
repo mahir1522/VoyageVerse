@@ -1,0 +1,32 @@
+<nav class="navbar">
+  <a class="navbar-brand"  routerLink="/home">Voyage</a>
+  <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+    <h1><b>+</b></h1>
+  </button>
+</nav>
+
+<div class="offcanvas offcanvas-start" style="width: 70%" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+  <div class="offcanvas-header">
+    <h5 id="sidebarLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" data-bs-dismiss="offcanvas">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/profile" data-bs-dismiss="offcanvas">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add-post" data-bs-dismiss="offcanvas">Add post</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/map" data-bs-dismiss="offcanvas">Map</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/settings" data-bs-dismiss="offcanvas">Settings</a>
+      </li>
+    </ul>
+  </div>
+</div>

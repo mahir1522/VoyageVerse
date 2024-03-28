@@ -1,6 +1,7 @@
 <section class="container-fluid d-flex align-items-center pt-4">
   <div class="row">
-    <div class="col-md-4" *ngFor="let post of posts">
+    @for(post of posts; track $index){
+      <div class="col-md-4">
       <div class="card mb-4 shadow">
         <img class="card-img-top" [src]="post.imageUrl" alt="{{ post.title }} Image">
         <div class="card-body">
@@ -9,5 +10,11 @@
         </div>
       </div>
     </div>
+    } @empty {
+      <div class="container-fluid">
+        <h1>no post here</h1>
+        <button class="btn btn-primary" routerLink="/add-post">Add post</button>
+      </div>
+    }
   </div>
 </section>
