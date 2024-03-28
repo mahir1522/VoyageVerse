@@ -2,6 +2,7 @@
 <!--<app-home></app-home>-->
 
 <div class="m-2">
-  <app-menu></app-menu>
-  <router-outlet></router-outlet>
+  <app-login *ngIf="!isAuthenticated()"></app-login>
+  <app-menu *ngIf="isAuthenticated()"></app-menu>
+  <router-outlet *ngIf="isAuthenticated()"></router-outlet>
 </div>
