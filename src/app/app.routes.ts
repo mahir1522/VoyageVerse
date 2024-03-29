@@ -7,6 +7,7 @@ import {SettingsComponent} from "./settings/settings.component";
 import {AddPostComponent} from "./add-post/add-post.component";
 import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
+import {ErrorComponent} from "./error/error.component";
 
 export const routes: Routes = [
 
@@ -19,5 +20,5 @@ export const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "signup", component: SignupComponent},
   {path: "", component: LoginComponent},
-
+  {path: "**", component: ErrorComponent}
 ];
