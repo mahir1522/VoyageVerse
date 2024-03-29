@@ -16,7 +16,7 @@
         <a class="nav-link" routerLink="/home" data-bs-dismiss="offcanvas">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/profile" data-bs-dismiss="offcanvas">Profile</a>
+        <a class="nav-link" (click)="goToProfile()" data-bs-dismiss="offcanvas">Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/add-post" data-bs-dismiss="offcanvas">Add post</a>
@@ -26,6 +26,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/settings" data-bs-dismiss="offcanvas">Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()" data-bs-dismiss="offcanvas">Logout</a>
       </li>
     </ul>
   </div>

@@ -68,4 +68,24 @@ export class UserDalService {
       }
     })
   }
+
+  async getUserProfile(userId: number | undefined) {
+    return new Promise((resolve, reject) => {
+      const transaction = this.database.db.transaction(["users"]);
+      const userStore = transaction.objectStore("users");
+
+      // Retrieve the user profile directly using the userId as the key
+      const request = userStore.get(userId);
+
+      request.onsuccess = (event: any) => {
+        const user = event.target.result;
+        resolve(user);
+      };
+
+      request.onerror = (event: any) => {
+        console.error("Error getting user by userId:", event);
+        reject(event);
+      };
+    });
+  }
 }
