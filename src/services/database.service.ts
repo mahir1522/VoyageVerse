@@ -30,6 +30,11 @@ export class DatabaseService {
           keyPath: "userId",
           autoIncrement:true,
         });
+
+        const postStore = this.db.createObjectStore("posts", {
+          keyPath: "postId",
+          autoIncrement:true,
+        });
       };
     });
   }

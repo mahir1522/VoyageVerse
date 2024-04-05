@@ -1,1 +1,32 @@
-<h1>{{currentUser?.firstName}}</h1>
+<section class="container-fluid d-flex align-items-center">
+  <div class="card-body text-center border-0">
+    <div class="m-4">
+      <h1 class="text-center fw-bold">Profile</h1><hr>
+    </div>
+      <img [src]="currentUser?.image || 'assets/images/img.jpg' " class="profile-picture">
+      <h1 class="mb-2 text-center">{{currentUser?.firstName}}  {{currentUser?.lastName}}</h1>
+      <p class="text-center">{{currentUser?.bio}}</p>
+      <div class="upload-container">
+        <button class="btn" (click)="takePicture()"> <i class="bi bi-upload"></i> Add Profile Picture</button>
+        <button class="btn" (click)="addFromLibrary()"> <i class="bi bi-image"></i> Add from Library</button>
+      </div>
+      <button class="btn" (click)="editProfile()" style="width: 95%;font-size: smaller;background-color: darkgray"> <i class="bi bi-pencil"></i> Edit Profile</button>
+      <hr>
+      @for(post of posts; track $index){
+        <div class="col-md-4" style="margin-bottom: 3.5rem" (click)="showPost(post.postId)">
+          <div class="card mb-4 shadow">
+            <img class="card-img-top" [src]="post.imageUrl || 'assets/images/img.jpg'" alt="{{ post.title }} Image">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.description }}</p>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <div class="container-fluid">
+          <h1>No posts yet</h1>
+          <button class="btn m-4" style="width: 50%; background-color: darkgray" routerLink="/add-post"><i class="bi bi-plus-lg"></i> Add post</button>
+        </div>
+      }
+    </div>
+</section>

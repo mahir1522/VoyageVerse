@@ -46,7 +46,6 @@ export class UserDalService {
 
       const request = userStore.openCursor();
 
-      // const request = userStore.get(email);
 
       request.onsuccess = (event:any)=>{
         const cursor = event.target.result;
@@ -87,5 +86,32 @@ export class UserDalService {
         reject(event);
       };
     });
+  }
+
+  update(user: User | null): Promise<any>{
+    return new Promise((resolve, reject) =>{
+      const transaction = this.database.db.transaction(["users"], "readwrite");
+
+      transaction.oncomplete = (event: any) => {
+        console.log("Success: update transaction successful");
+      };
+      transaction.onerror = (event: any) => {
+        console.log("Error: error in update transaction: " + event);
+      };
+
+      const userStore = transaction.objectStore("users");
+
+      const reqUpdate = userStore.put(user);
+
+      reqUpdate.onsuccess = (event: any) => {
+        console.log(`Success: data updated successfully: ${event}`);
+        resolve(event);
+      };
+
+      reqUpdate.onerror = (event: any) => {
+        console.log(`Error: failed to update: ${event}`);
+        reject(event)
+      };
+    })
   }
 }

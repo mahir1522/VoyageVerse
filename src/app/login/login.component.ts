@@ -45,12 +45,4 @@ export class LoginComponent {
       this.errorMessage = 'Please enter both email and password.';
     }
   }
-
-    showLogin = true;
-
-  toggleSignup(){
-    this.showLogin = !this.showLogin;
-  }
-  
 }
-
