@@ -1,7 +1,4 @@
-
 <div class="m-2">
-  <app-login *ngIf="!isAuthenticated()"></app-login>
   <app-menu *ngIf="isAuthenticated()"></app-menu>
-  <router-outlet *ngIf="isAuthenticated()"></router-outlet>
+  <router-outlet></router-outlet>
 </div>
-

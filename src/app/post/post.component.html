@@ -1,1 +1,26 @@
-<p>post works!</p>
+<div class="m-4">
+  <h1 class="text-center fw-bold">Edit Post</h1><hr>
+</div>
+<section class="container-fluid d-flex align-items-center">
+  <div class="card shadow rounded" style="width:100%;">
+    <div class="card-body text-center border-0">
+      <form #editPostForm="ngForm">
+        <div class="form-floating mb-3">
+          <input id="title" name="title" class="form-control border-0 border-bottom" ngModel="{{post?.title}}" type="text">
+          <label for="title">Title</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea id="description" name="description" class="form-control border-0 border-bottom" ngModel="{{post?.description}}" type="text"></textarea>
+          <label for="description">Description</label>
+        </div>
+        <div class="form-floating mb-3">
+          <button id="imageUrl" name="imageUrl" (click)="addFromLibrary()">Upload Image</button>
+        </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-primary m-2" style="width: 40%" (click)="onEdit(editPostForm)">Edit</button>
+            <button class="btn btn-danger m-2" style="width: 40%" (click)="deletePost()">Delete</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</section>

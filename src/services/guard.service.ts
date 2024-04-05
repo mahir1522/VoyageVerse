@@ -9,6 +9,7 @@ import {CanActivate} from "@angular/router";
 })
 export class GuardService implements CanActivate{
 
+
   auth = inject(AuthService)
   router = inject(Router)
   constructor() { }

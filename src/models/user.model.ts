@@ -5,7 +5,7 @@ export class User{
   lastName: string;
   email:string;
   password:string;
-  image?: string | null;
+  image?: any;
   bio?: string;
 
   constructor(firstName: string, lastName: string,email:string, password:string){
@@ -13,8 +13,6 @@ export class User{
     this.lastName = lastName;
     this.email = email;
     this.password = password;
-    // this.bio = bio;
-    // this.image = image;
   }
 }
 

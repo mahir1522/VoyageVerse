@@ -1,1 +1,20 @@
-<p>add-post works!</p>
+<div class="m-4">
+  <h1 class="text-center fw-bold">Add Post</h1><hr>
+</div>
+<section class="container-fluid d-flex align-items-center">
+  <div class="card shadow rounded" style="width:100%;">
+    <div class="card-body text-center border-0">
+      <form (ngSubmit)="addPost(addPostForm)" #addPostForm="ngForm">
+        <div class="form-floating mb-3">
+          <input id="title" name="title" class="form-control border-0 border-bottom" ngModel  type="text">
+          <label for="title">Title</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea id="description" name="description" class="form-control border-0 border-bottom" ngModel type="text"></textarea>
+          <label for="description">Description</label>
+        </div>
+        <button class="btn btn-primary btn-block mb-3 form-control" type="submit">Add post</button>
+      </form>
+    </div>
+  </div>
+</section>
